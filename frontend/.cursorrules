@@ -1,0 +1,161 @@
+# Windsurf/Cursor AI Rules for LittleLegend
+
+## Project Context
+LittleLegend is a Next.js app that helps parents track their child's achievements from birth to adulthood, creating a timeline that transforms into a professional CV.
+
+## Technology Stack
+- Next.js 14 (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+- Lucide React (icons)
+
+## Code Style Guidelines
+
+### File Structure
+- Pages: `src/app/[route]/page.tsx`
+- Components: `src/components/[category]/ComponentName.tsx`
+- Utilities: `src/lib/utils.ts`
+- Types: Define inline or in `src/types/index.ts`
+
+### Naming Conventions
+- Components: PascalCase (e.g., `ActivityCard.tsx`)
+- Functions: camelCase (e.g., `handleSubmit`)
+- Constants: UPPER_SNAKE_CASE (e.g., `API_BASE_URL`)
+- Files: kebab-case for pages, PascalCase for components
+
+### TypeScript Rules
+- Always use TypeScript
+- Define interfaces for props
+- Use strict mode
+- Avoid `any` type
+
+### Styling Rules
+- Use Tailwind CSS classes exclusively
+- Follow mobile-first approach
+- Use custom colors from tailwind.config.ts:
+  - royal-purple (primary)
+  - legend-gold (secondary)
+  - growth-green (success)
+  - cream-50 (background)
+
+### Component Patterns
+```tsx
+// Use function declarations for components
+export default function ComponentName({ prop1, prop2 }: Props) {
+  return (
+    <div className="tailwind-classes">
+      {/* content */}
+    </div>
+  );
+}
+
+// Export types with components
+export interface ComponentNameProps {
+  prop1: string;
+  prop2?: number;
+}
+```
+
+### Form Handling
+- Use React hooks (useState, useEffect)
+- Client components with "use client" directive
+- Handle loading states
+- Show error messages
+
+### Icons
+- Use Lucide React: `import { IconName } from "lucide-react"`
+- Common icons: Star, Plus, User, Settings, Trophy, Calendar
+
+### Color Usage
+- Primary buttons: `bg-royal-purple-700 text-white`
+- Secondary buttons: `border-2 border-royal-purple-700 text-royal-purple-700`
+- Cards: `bg-white rounded-2xl shadow-lg`
+- Background: `bg-cream-50`
+
+### Responsive Design
+- Mobile-first: base styles for mobile
+- `md:` for tablets
+- `lg:` for desktop
+- Use `max-w-7xl mx-auto` for container width
+
+## Common Tasks
+
+### Creating a New Page
+1. Create folder: `src/app/[route]/`
+2. Create `page.tsx`
+3. Add to navigation if needed
+4. Use layout.tsx for shared UI
+
+### Creating a Component
+1. Create file: `src/components/[category]/ComponentName.tsx`
+2. Define props interface
+3. Export component
+4. Import where needed
+
+### Adding an Icon
+1. Import from lucide-react
+2. Use size classes: `w-5 h-5` for standard, `w-6 h-6` for large
+
+### Styling a Button
+- Primary: `bg-royal-purple-700 text-white px-6 py-3 rounded-xl font-semibold hover:bg-royal-purple-800`
+- Secondary: `border-2 border-royal-purple-700 text-royal-purple-700 px-6 py-3 rounded-xl font-semibold hover:bg-royal-purple-50`
+
+### Creating a Card
+```tsx
+<div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
+  {/* content */}
+</div>
+```
+
+## Project-Specific Rules
+
+### LittleLegend Brand
+- Tagline: "Where every legend begins"
+- Tone: Empowering, warm, professional but friendly
+- Use emoji sparingly for kid-friendly sections
+
+### Key Features to Remember
+1. Track activities by category (Sports, Arts, Academic, etc.)
+2. Upload photos/certificates
+3. Timeline view
+4. CV generation
+5. Multiple children support
+
+### Mock Data Structure
+```typescript
+interface Child {
+  id: string;
+  name: string;
+  age: number;
+  avatar: string;
+  totalActivities: number;
+}
+
+interface Activity {
+  id: string;
+  title: string;
+  category: string;
+  date: string;
+  icon: string;
+}
+```
+
+## Commands
+- Run dev: `npm run dev`
+- Build: `npm run build`
+- Type check: `npx tsc --noEmit`
+
+## When Asked to Implement
+1. Check existing files first
+2. Follow the patterns shown in existing code
+3. Use the color system defined in tailwind.config.ts
+4. Make it responsive (mobile-first)
+5. Add proper TypeScript types
+6. Use Lucide icons
+7. Follow the design in DESIGN.md
+
+## Questions?
+- Refer to DESIGN.md for UI specifications
+- Refer to ARCHITECTURE.md for technical details
+- Refer to WINDSURF.md for project overview
