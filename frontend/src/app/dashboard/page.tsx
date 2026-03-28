@@ -53,9 +53,9 @@ export default function DashboardPage() {
             </div>
 
             <div className="flex items-center gap-4">
-              <button className="bg-royal-purple-700 text-white p-2 rounded-lg hover:bg-royal-purple-800 transition-colors">
+              <Link href="/activity/new" className="bg-royal-purple-700 text-white p-2 rounded-lg hover:bg-royal-purple-800 transition-colors">
                 <Plus className="w-5 h-5" />
-              </button>
+              </Link>
               <div className="w-9 h-9 rounded-full bg-royal-purple-100 flex items-center justify-center">
                 <User className="w-5 h-5 text-royal-purple-700" />
               </div>
@@ -86,7 +86,7 @@ export default function DashboardPage() {
               </div>
             </div>
             <Link 
-              href="#"
+              href="/child-profile"
               className="text-royal-purple-700 font-semibold text-sm hover:text-royal-purple-800 flex items-center gap-1"
             >
               View Profile
@@ -111,13 +111,13 @@ export default function DashboardPage() {
 
           <div className="flex gap-3 mt-6">
             <Link
-              href="#"
+              href="/child-profile"
               className="flex-1 bg-royal-purple-700 text-white py-3 rounded-xl font-semibold text-center hover:bg-royal-purple-800 transition-colors"
             >
               View Timeline
             </Link>
             <Link
-              href="#"
+              href="/cv"
               className="flex-1 border-2 border-royal-purple-700 text-royal-purple-700 py-3 rounded-xl font-semibold text-center hover:bg-royal-purple-50 transition-colors"
             >
               Preview CV
@@ -173,10 +173,10 @@ export default function DashboardPage() {
                 ))}
               </div>
 
-              <button className="w-full mt-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-gray-500 hover:border-royal-purple-400 hover:text-royal-purple-700 transition-colors flex items-center justify-center gap-2">
+              <Link href="/activity/new" className="w-full mt-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-gray-500 hover:border-royal-purple-400 hover:text-royal-purple-700 transition-colors flex items-center justify-center gap-2">
                 <Plus className="w-5 h-5" />
                 Add New Activity
-              </button>
+              </Link>
             </div>
           </div>
 
